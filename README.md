@@ -12,6 +12,7 @@ The full code is available as [examples.go](https://github.com/EladLeev/go-zooke
 # How to
 ## Get
 Use `Get` to simply get data from ZK.
+
 `Get` gets a string path, and return the data as []byte.
 ```go
 func getZnode(c *zk.Conn, path string) string {
@@ -38,6 +39,7 @@ func getChildren(c *zk.Conn, path string) []string {
 
 ## Exists
 Use `Exists` to check if zNode exist.
+
 Retrun value is bool
 ```go
 func checkZnode(c *zk.Conn, path string) bool {
@@ -51,6 +53,7 @@ func checkZnode(c *zk.Conn, path string) bool {
 
 ## GetW
 Set watch on znode, and wait for event.
+
 Catch the event and use switch - case to do something, or just print the event name.
 ```go
 	data, _, ch, err := c.GetW(zkPath)
